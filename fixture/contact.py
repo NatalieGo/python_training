@@ -42,9 +42,10 @@ class ContactHelper:
         self.change_field_value("notes", newcontact.notes)
 
     def change_field_value_select(self, field_name, text):
+        wd = self.app.wd
         if text is not None:
             wd.find_element_by_name(field_name).click()
-            Select(wd.find_element_by_name(field_name)).select_by_visible_text(newcontact.bday)
+            Select(wd.find_element_by_name(field_name)).select_by_visible_text(text)
             wd.find_element_by_name(field_name).click()
 
     def change_field_value(self, field_name, text):
@@ -64,6 +65,7 @@ class ContactHelper:
 
     def select_first_contact(self):
         wd = self.app.wd
+        self.return_to_home_page()
         wd.find_element_by_name("selected[]").click()
 
     def modify_first_contact(self, new_contact_data):
