@@ -1,4 +1,5 @@
 from selenium.webdriver.support.ui import Select
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -20,7 +21,6 @@ class ContactHelper:
         self.change_field_value("lastname", newcontact.lastname)
         self.change_field_value("nickname", newcontact.nickname)
         self.change_field_value("title", newcontact.title)
-        # wd.find_element_by_name("theform").click()
         self.change_field_value("company", newcontact.company)
         self.change_field_value("address", newcontact.address)
         self.change_field_value("home", newcontact.home)
